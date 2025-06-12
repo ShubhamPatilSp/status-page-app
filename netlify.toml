@@ -2,6 +2,8 @@
 
 # Base build settings for the entire project.
 [build]
+  [build.environment]
+    PYTHON_VERSION = "3.11"
   # The base directory for the build, relative to the root.
   base = "frontend"
   # The build command, run from the base directory.
