@@ -1,7 +1,7 @@
 import { getAccessToken, withApiAuthRequired } from '@auth0/nextjs-auth0';
 import { NextRequest, NextResponse } from 'next/server';
 
-const API_ROOT_URL = process.env.NEXT_PUBLIC_API_URL || 'http://127.0.0.1:8000';
+const API_ROOT_URL = process.env.NEXT_PUBLIC_API_URL || 'https://status-page-app.netlify.app/.netlify/functions/main';
 const FASTAPI_ORGANIZATIONS_ENDPOINT = `${API_ROOT_URL}/api/v1/organizations`;
 const AUTH0_AUDIENCE = process.env.NEXT_PUBLIC_AUTH0_AUDIENCE;
 // Define necessary scopes if different from services, typically reading orgs might be covered by general read scopes.

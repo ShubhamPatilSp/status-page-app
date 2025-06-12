@@ -2,7 +2,7 @@ import { getAccessToken, withApiAuthRequired } from '@auth0/nextjs-auth0';
 import { NextRequest, NextResponse } from 'next/server';
 
 // The base URL for the FastAPI backend
-const API_ROOT_URL = process.env.NEXT_PUBLIC_API_URL || 'http://127.0.0.1:8000';
+const API_ROOT_URL = process.env.NEXT_PUBLIC_API_URL || 'https://status-page-app.netlify.app/.netlify/functions/main';
 const FASTAPI_SERVICES_ENDPOINT_BASE = `${API_ROOT_URL}/api/v1/services`;
 
 // Common function to get access token
