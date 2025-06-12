@@ -9,7 +9,7 @@ class MongoDB:
 mongodb = MongoDB()
 
 async def connect_to_mongo():
-    mongodb.client = AsyncIOMotorClient(settings.MONGODB_URL)
+    mongodb.client = AsyncIOMotorClient(settings.MONGODB_URL.replace("mongodb://", "mongodb+srv://"))
     mongodb.db = mongodb.client[settings.MONGODB_DB_NAME]
     print(f"Successfully connected to MongoDB: {settings.MONGODB_DB_NAME}")
     

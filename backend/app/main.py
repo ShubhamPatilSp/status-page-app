@@ -23,10 +23,11 @@ socket_app = ASGIApp(sio, app)
 # CORS Middleware
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["http://localhost:3000"],  # Allows your Next.js frontend
+    allow_origins=["http://localhost:3000", "https://status-page-app.netlify.app"],  # Allows both local and Netlify frontend
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
+    expose_headers=["Content-Length"]  # Needed for socket.io
 )
 
 @app.on_event("startup")
