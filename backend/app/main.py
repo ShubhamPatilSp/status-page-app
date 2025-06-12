@@ -79,3 +79,7 @@ app.include_router(api_router, prefix="/api/v1")
 @app.get("/", tags=["Root"], summary="Root endpoint to check API status")
 async def read_root():
     return {"message": "Welcome to the StatusTrack API!"}
+
+# Add Mangum handler for Netlify
+from mangum import Mangum
+handler = Mangum(socket_app, lifespan="off")

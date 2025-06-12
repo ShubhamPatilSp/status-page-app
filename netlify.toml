@@ -1,0 +1,19 @@
+# Netlify configuration for a monorepo with a Next.js frontend and Python backend.
+
+# Base build settings for the entire project.
+[build]
+  # The command to build the frontend. It navigates to the frontend directory,
+  # installs dependencies, and runs the build script.
+  command = "cd frontend && npm install && npm run build"
+  # The directory (relative to the root) that contains the deploy-ready assets.
+  publish = "frontend/.next"
+  # The directory (relative to the root) where the serverless functions are located.
+  functions = "backend/app"
+
+
+# This rewrite rule directs all requests to /api/v1/* to the Python serverless function.
+# This mimics the routing configuration present in your vercel.json file.
+[[redirects]]
+  from = "/api/v1/*"
+  to = "/.netlify/functions/main/:splat"
+  status = 200
