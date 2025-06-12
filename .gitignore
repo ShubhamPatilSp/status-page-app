@@ -39,6 +39,8 @@ env/
 node_modules/
 .next/
 out/
+!frontend/src/lib/
+!frontend/src/components/
 
 # Database
 *.db
