@@ -11,9 +11,6 @@
   # The directory where serverless functions are located, relative to the root.
   functions = "../backend/app"
 
-[build.environment]
-  PYTHON_VERSION = "3.11"
-
 
 # This rewrite rule directs all requests to /api/v1/* to the Python serverless function.
 # This mimics the routing configuration present in your vercel.json file.
