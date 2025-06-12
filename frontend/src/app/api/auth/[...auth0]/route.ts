@@ -6,4 +6,4 @@ if (process.env.APP_SESSION_SECRET && !process.env.AUTH0_SECRET) {
   process.env.AUTH0_SECRET = process.env.APP_SESSION_SECRET;
 }
 
-export const { GET, POST } = handleAuth();
+export const GET = handleAuth();
